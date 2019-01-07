@@ -142,7 +142,7 @@ class Dispatch {
 		throw new Redirect();
 	}
 
-	static var GET_RULES;
+	static var GET_RULES : Array<Array<{ name : String, rule : MatchRule, opt : Bool }>>;
 	public function runtimeGetParams( cfgIndex : Int ) : Dynamic {
 		if( GET_RULES == null )
 			GET_RULES = haxe.Unserializer.run(haxe.rtti.Meta.getType(Dispatch).getParams[0]);
